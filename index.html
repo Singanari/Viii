@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>LOVE UUUU</title>
+    <meta name="description" content="Xoay một vòng, ký ức lại về. Tớ vẫn ở đây, cùng cậu nhìn lại những ngày đáng yêu nhất qua vòng quay 3D diệu kỳ này.">
+    <meta name="keywords" content="Gặp nhau lần đầu,
+ánh mắt chạm nhau thật khẽ,
+nụ cười khiến tim rung rinh,
+tin nhắn ngốc xít mà nhớ cả ngày,
+câu nói dỗi nhẹ mà thương vô cùng,
+lặng im nhưng vẫn luôn chờ nhau,
+những ngày không tên mà lại đáng nhớ nhất,
+yêu thương chẳng cần nói thành lời,
+vẫn giữ một góc nhỏ dành cho cậu trong tim.">
+    <link rel="canonical" href="https://love.tsonit.com/vong-xoay-ky-uc">
+    <meta property="og:title" content="SEMANGATT CINTAAAAA">
+    <meta property="og:description" content="Xoay một vòng, ký ức lại về. Tớ vẫn ở đây, cùng cậu nhìn lại những ngày đáng yêu nhất qua vòng quay 3D diệu kỳ này.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://love.tsonit.com/vong-xoay-ky-uc">
+    <meta property="og:image" content="https://love.tsonit.com/love.jpg">
+    <meta property="og:image:height" content="575">
+    <meta property="og:image:width" content="288">
+    <meta name="twitter:title" content="SEMANGATT CINTAAAAA">
+    <meta name="twitter:description" content="Xoay một vòng, ký ức lại về. Tớ vẫn ở đây, cùng cậu nhìn lại những ngày đáng yêu nhất qua vòng quay 3D diệu kỳ này.">
+    <meta name="twitter:image" content="https://love.tsonit.com/love.jpg">
+    <meta name="twitter:site" content="@loveloom">
+    <meta property="og:url" content="https://love.tsonit.com/vong-xoay-ky-uc">
+    <link rel="canonical" href="https://love.tsonit.com/vong-xoay-ky-uc">
+    <meta property="og:image:alt" content="Trang bìa của LoveLoom" />
+    <meta name="twitter:image:alt" content="Trang bìa của LoveLoom" />
+    <meta property="og:site_name" content="LoveLoom" />
+    <meta name="twitter:creator" content="@thanhson1711" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="author" content="Thành Sơn">
+    <meta name="copyright" content="© 2025 LoveLoom">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="icon" type="image/png" href="https://love.tsonit.com/ico_logo.png" sizes="16x16">
+    <link rel="stylesheet" href="https://love.tsonit.com/assets/roundabout/style.css?v=1.10">
+    <!-- Sử dụng link CDN Font Awesome để đảm bảo hoạt động -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C01QH0Y269"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-C01QH0Y269');
+    </script>
+    <style>
+        .btn-audio-toggle {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .music-status {
+            display: flex;
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            z-index: 9999;
+            align-items: center;
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+
+        .music-status .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #57162F;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- THÊM CÁC PHẦN TỬ THÔNG BÁO NÀY VÀO ĐẦU TIÊN -->
+    <div id="loader" class="status-overlay is-active">
+        <div class="spinner"></div>
+        <p>Đang tải dữ liệu Ký ức...</p>
+    </div>
+    <div id="error-message" class="status-overlay">
+        <p>Rất tiếc, đã có lỗi xảy ra. Vui lòng thử lại sau.</p>
+    </div>
+    <h2 id="title">SEMANGATT CINTAAAAA</h2>
+
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <!-- Các thẻ card sẽ được tự động chèn vào đây bằng JavaScript -->
+        </div>
+    </div>
+
+    <div class="controls1">
+        <button class="prev" id="prev">←</button>
+        <button class="next" id="next">→</button>
+    </div>
+    <button id="toggle-audio" class="text-white btn-audio-toggle"
+        style="position: absolute; top: 10px; right: 10px; z-index: 999;">
+        <i id="audio-icon" class="text-white  fa-solid fa-volume-high"></i>
+    </button>
+    <!-- Sử dụng link CDN GSAP để đảm bảo hoạt động -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+            
+        <script>
+            window.dataRoundaboutLoveLoom = {
+    template: 'roundabout',
+    data: {
+      image: [
+        'img1.jpg',
+        'img2.jpg',
+        'img3.jpg',
+        'img4.jpg',
+        'img5.jpg',
+        'img6.jpg',
+        'img7.jpg'
+      ]
+    }
+  };
+        </script>
+        <script src="https://love.tsonit.com/assets/roundabout/script.js?v=1755701241"></script>
+    <script>
+        // Thay thế toàn bộ đối tượng musicManager cũ bằng cái này
+        const musicManager = {
+            // Properties
+            audio: null,
+            isUnlocked: false, // << QUAN TRỌNG: Thêm trạng thái "đã mở khóa"
+            state: 'idle', // idle, loading, ready, playing, paused, error
+            tokenData: null,
+
+            _setupAudio(sourceUrl = null) {
+                // Giữ nguyên logic này
+                let audioSrc = sourceUrl || window.dataRoundaboutLoveLoom?.data?.backgroundMusic;
+                if (!audioSrc) {
+                    // Thay đổi nhỏ: Sử dụng một đường dẫn mặc định an toàn hơn
+                    audioSrc = 'musik.mp3'; // <-- Đảm bảo bạn có file này
+                    console.warn("Không tìm thấy cấu hình nhạc, sử dụng nhạc mặc định.");
+                }
+                this.audio = new Audio(audioSrc);
+                const isCrossOrigin = /^(https?:)?\/\//.test(audioSrc) && new URL(audioSrc).origin !== window.location.origin;
+                if (isCrossOrigin) {
+                    this.audio.crossOrigin = "anonymous";
+                }
+                this.audio.loop = true;
+                this.audio.volume = 0.7;
+                this.attachEventListeners();
+                // Không cần gán window.galaxyAudio nữa trừ khi bạn dùng nó ở nơi khác
+                this.updateState('ready');
+            },
+
+            async init() {
+                // Logic init này về cơ bản đã tốt, giữ nguyên
+                const musicConfig = window.dataRoundaboutLoveLoom?.data;
+                this.updateState('loading');
+
+                if (!musicConfig) {
+                    console.warn("Không tìm thấy dataRoundaboutLoveLoom. Sử dụng nhạc hệ thống dự phòng.");
+                    this._setupAudio();
+                    return;
+                }
+
+                if (musicConfig.type_music === 'system') {
+                    this._setupAudio(musicConfig.backgroundMusic);
+                } else if (musicConfig.type_music === 'zing' && musicConfig.music_id) {
+                    try {
+                        const res = await this.fetchWithAuth(`/get-song?id=${musicConfig.music_id}`);
+                        console.log(res)
+                        if (!res.ok) throw new Error(`Response not OK: ${res.status}`);
+                        const songInfo = await res.json();
+                        const mp3Url = songInfo.stream?.['128'];
+
+                        if (mp3Url) {
+                            this._setupAudio(mp3Url);
+                        } else {
+                            console.error('Không tìm thấy link MP3 128kbps, dùng nhạc dự phòng.');
+                            this._setupAudio();
+                        }
+                    } catch (error) {
+                        console.error('Lỗi khi lấy nhạc từ Zing:', error);
+                        this.updateState('error');
+                        this._setupAudio();
+                    }
+                } else {
+                    this._setupAudio();
+                }
+            },
+
+            // ===================================================================
+            // ===== CẬP NHẬT QUAN TRỌNG NHẤT: Phương thức play() "thông minh" =====
+            // ===================================================================
+            play() {
+                // Nếu chưa có audio hoặc chưa sẵn sàng, không làm gì cả
+                if (!this.audio || this.state === 'loading') {
+                    return Promise.reject(new Error("Audio chưa sẵn sàng."));
+                }
+
+                // Nếu đang chạy rồi thì thôi
+                if (!this.audio.paused) {
+                    return Promise.resolve();
+                }
+
+                // Cố gắng phát nhạc
+                const playPromise = this.audio.play();
+
+                playPromise.then(() => {
+                    // THÀNH CÔNG: Đánh dấu đã mở khóa và cập nhật trạng thái
+                    this.isUnlocked = true;
+                    this.updateState('playing');
+                }).catch(error => {
+                    // THẤT BẠI: (Thường là do chính sách Autoplay)
+                    if (error.name === 'NotAllowedError') {
+                        console.warn("Autoplay bị chặn. Cần người dùng tương tác.");
+                        // Giữ trạng thái là 'paused' hoặc 'ready' để lần sau có thể thử lại
+                        this.updateState('paused');
+                    } else {
+                        console.error("Lỗi khi phát nhạc:", error);
+                        this.updateState('error');
+                    }
+                });
+
+                // Luôn trả về Promise để code bên ngoài có thể xử lý nếu cần
+                return playPromise;
+            },
+
+            togglePlayback() {
+                if (!this.audio || this.state === 'loading') {
+                    console.warn("Nhạc chưa sẵn sàng.");
+                    return;
+                }
+
+                // Logic toggle đơn giản và hiệu quả
+                if (this.audio.paused) {
+                    this.play(); // Dùng hàm play() thông minh của chúng ta
+                } else {
+                    this.audio.pause();
+                }
+            },
+
+            // Các hàm còn lại giữ nguyên
+            updateState(newState) {
+                this.state = newState;
+                this.updateUI();
+            },
+
+            updateUI() {
+                const audioIcon = document.getElementById('audio-icon');
+                if (!audioIcon) return;
+
+                if (!this.audio || this.audio.paused) {
+                    audioIcon.classList.remove("fa-volume-high");
+                    audioIcon.classList.add("fa-volume-xmark");
+                } else {
+                    audioIcon.classList.remove("fa-volume-xmark");
+                    audioIcon.classList.add("fa-volume-high");
+                }
+            },
+
+            attachEventListeners() {
+                if (!this.audio) return;
+                this.audio.onplay = () => this.updateState('playing');
+                this.audio.onpause = () => this.updateState('paused');
+                this.audio.onvolumechange = () => this.updateUI();
+            },
+
+            // Các hàm fetchWithAuth và getToken giữ nguyên...
+             // Các hàm fetchWithAuth và getToken giữ nguyên...
+            async getToken() {
+                try {
+                    const res = await fetch('/token-api-mp3');
+                    if (!res.ok) throw new Error('Không lấy được token');
+                    const data = await res.json();
+                    this.tokenData = data;
+                    return this.tokenData;
+                } catch (err) {
+                    console.error('Lỗi lấy token:', err);
+                    return null;
+                }
+            },
+            async fetchWithAuth(url) {
+                await this.getToken();
+
+                if (!this.tokenData) throw new Error('Không có token xác thực');
+
+                const headers = {
+                    'X-Auth-Token': this.tokenData.token,
+                    'X-Auth-Timestamp': this.tokenData.timestamp,
+                    'X-Client-Key': this.tokenData.clientKey,
+                    'X-Auth-Nonce': this.tokenData.nonce,
+                };
+
+                let res = await fetch(url, {
+                    headers
+                });
+
+                if (!res.ok) {
+                    const errorText = await res.text();
+                    console.error(`Lỗi response (${res.status}):`, errorText);
+                    if (res.status === 403) {
+                        await this.getToken();
+                        if (!this.tokenData) throw new Error('Không có token xác thực');
+
+                        const newHeaders = {
+                            'X-Auth-Token': this.tokenData.token,
+                            'X-Auth-Timestamp': this.tokenData.timestamp,
+                            'X-Client-Key': this.tokenData.clientKey,
+                            'X-Auth-Nonce': this.tokenData.nonce,
+                        };
+
+                        res = await fetch(url, {
+                            headers: newHeaders
+                        });
+
+                        if (!res.ok) {
+                            const errText = await res.text();
+                            throw new Error(`Request lỗi sau khi refresh token: ${res.status}`);
+                        }
+                    } else {
+                        throw new Error(`Request lỗi: ${res.status}`);
+                    }
+                }
+
+                return res;
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            window.musicManager = musicManager;
+            musicManager.init();
+
+            const toggleBtn = document.getElementById("toggle-audio");
+            toggleBtn.addEventListener("click", () => musicManager.togglePlayback());
+        });
+    </script>
+            <script>
+            // Chặn chuột phải
+            document.addEventListener("contextmenu", function(e) {
+                e.preventDefault();
+            });
+
+            // Chặn F12, Ctrl+U, Ctrl+Shift+I/J/C/S, Cmd+Opt+I (Mac)
+            document.addEventListener("keydown", function(e) {
+                if (
+                    e.key === "F12" ||
+                    (e.ctrlKey && e.shiftKey && ["i", "j", "c", "s"].includes(e.key.toLowerCase())) ||
+                    (e.ctrlKey && e.key.toLowerCase() === "u") ||
+                    (e.metaKey && e.altKey && e.key.toLowerCase() === "i") || // Cmd + Opt + I
+                    (e.metaKey && e.key.toLowerCase() === "u") // Cmd + U
+                ) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            // Xóa console methods
+            console.log = () => {};
+            console.debug = () => {};
+            console.warn = () => {};
+            console.info = () => {};
+
+            // Phát hiện DevTools bằng thời gian thực thi debugger
+            setInterval(() => {
+                const before = new Date().getTime();
+                debugger;
+                const after = new Date().getTime();
+                if (after - before > 100) {
+                    document.body.innerHTML =
+                        '<h1 style="text-align:center;margin-top:100px;color:red">🔒 Bạn đang cố mở Developer Tools!</h1>';
+                }
+            }, 1000);
+
+            // Phát hiện DevTools qua kích thước cửa sổ
+            // function detectDevToolsSize() {
+            //     if (
+            //         window.outerWidth - window.innerWidth > 160 ||
+            //         window.outerHeight - window.innerHeight > 160
+            //     ) {
+            //         document.body.innerHTML = '<h1 style="text-align:center;margin-top:100px;color:red">🔒 Developer Tools bị phát hiện!</h1>';
+            //     }
+            // }
+            // window.onresize = detectDevToolsSize;
+            // window.onload = detectDevToolsSize;
+
+            // Phát hiện mở console qua toString tampering
+            (function() {
+                const element = new Image();
+                Object.defineProperty(element, 'id', {
+                    get: function() {
+                        document.body.innerHTML =
+                            '<h1 style="text-align:center;margin-top:100px;color:red">⚠️ Đừng mở console!</h1>';
+                        throw new Error("Console is blocked");
+                    }
+                });
+
+                setInterval(() => {
+                    console.log(element);
+                    console.clear();
+                }, 2000);
+            })();
+
+            // Ngăn inspect element qua mouse drag
+            document.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+            });
+
+            // Ngăn chọn toàn bộ (Ctrl+A)
+            document.addEventListener('keydown', function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'a') {
+                    e.preventDefault();
+                }
+            });
+        </script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"dbcd8856a1a842ceb5c3d63534a9f51d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+</html>
